@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>曼城黃葉（香港）會計師樓 · 印花稅、報稅及會計</title>
+<meta name="description" content="位於曼徹斯特 Ancoats 的 ACCA 及 HKICPA 會計師。計算印花稅、查看 HMRC 日子，以英語、廣東話或普通話與我們傾談。">
+<link rel="alternate" hreflang="zh-Hant" href="https://uxcircles.github.io/wong-yip/index.html">
+<link rel="alternate" hreflang="en" href="https://uxcircles.github.io/wong-yip/en/index.html">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#360064">
+<link rel="preload" href="assets/fonts/redhat-display.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/redhat-text.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css?v=7">
+<script defer src="assets/site.js?v=7"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳至內容</a>
+<div class="concept">
+  <div class="wrap concept-in">
+    <span class="concept-tag">Concept / 概念</span>
+    <span>重新設計概念，並非 <a href="https://www.wongyipaccountants.co.uk/">曼城黃葉會計師樓</a> 官方網站。</span>
+    <a class="concept-by" href="https://ux-circles.com/professionals">Designed by UX CIRCLES ↗</a>
+  </div>
+</div>
+<header class="site-head" id="top">
+  <div class="wrap head-in">
+    <a class="brand" href="index.html" aria-label="曼城黃葉會計師樓 首頁">
+      <img src="assets/img/logo.png" width="1000" height="205" alt="Wong &amp; Yip Accountants Limited">
+      <span class="brand-zh" lang="zh-Hant">曼城黃葉（香港）會計師樓</span>
+    </a>
+    <nav class="nav" aria-label="主選單"><a href="services.html">服務</a><a href="stamp-duty.html">印花稅</a><a href="about.html">關於我們</a><a href="index.html#contact">聯絡</a></nav>
+    <a class="lang" href="en/" lang="en" hreflang="en">English</a>
+    <a class="head-call" href="tel:+447599614875">+44 7599 614875</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">選單</button>
+  </div>
+  <div class="menu" id="menu" hidden>
+    <nav class="wrap" aria-label="選單">
+      <a href="services.html">服務</a><a href="stamp-duty.html">印花稅</a><a href="about.html">關於我們</a><a href="index.html#contact">聯絡</a>
+      <a href="en/" lang="en">English</a>
+      <a href="tel:+447599614875">致電 +44 7599 614875</a>
+      <a href="https://wa.me/447599614875">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-h">
+  <img class="chev hero-chev" src="assets/img/mark.png" width="400" height="238" alt="" aria-hidden="true">
+  <div class="wrap hero-in">
+    <h1 id="hero-h">買樓之前，先計清楚印花稅</h1>
+    <form class="tool" id="sdlt" data-sdlt novalidate>
+  <div class="tool-in">
+    <label class="price">
+      <span class="lbl">樓價</span>
+      <span class="price-box"><span aria-hidden="true">£</span><input name="price" inputmode="numeric" autocomplete="off" value="300,000" aria-describedby="sdlt-scope"></span>
+    </label>
+    <fieldset class="seg">
+      <legend class="lbl">買入後，你名下</legend>
+      <label><input type="radio" name="type" value="ftb"><span>首次置業<small>從未在任何地方擁有物業</small></span></label>
+      <label><input type="radio" name="type" value="home" checked><span>只有這一個物業<small>例如已賣出香港的樓</small></span></label>
+      <label><input type="radio" name="type" value="add"><span>多於一個物業<small>例如保留香港的樓</small></span></label>
+    </fieldset>
+    <label class="check"><input type="checkbox" name="nonres"><span>購買前 12 個月內在英國少於 183 日（非英國居民，+2%）</span></label>
+  </div>
+  <output class="receipt" aria-live="polite" for="sdlt">
+    <span class="r-total"><span>應繳印花稅</span><b data-total>£0</b></span>
+    <span class="r-eff" data-eff></span>
+    <table><caption class="vh">各級稅款</caption><tbody data-rows></tbody></table>
+    <span class="r-notes" data-notes></span>
+  </output>
+  <p class="tool-scope" id="sdlt-scope">2025 年 4 月 1 日起英格蘭及北愛爾蘭住宅稅率。只供估算，並非稅務意見。</p>
+</form>
+    <p class="hero-foot">曼城黃葉會計師樓：ACCA 及 HKICPA 會計師，以英語、廣東話及普通話服務。 <a href="stamp-duty.html">計算方法及退稅</a></p>
+  </div>
+</section>
+
+<section class="dates" aria-labelledby="dates-h">
+  <div class="wrap">
+    <h2 id="dates-h">接下來的 HMRC 日子</h2>
+    <ol class="date-stack" data-deadlines aria-live="polite"></ol>
+    <p class="dates-note">按倫敦今天的日期計算。Making Tax Digital 季度申報：2026 年 4 月起適用於合資格收入超過 £50,000 的自僱人士及業主，2027 年 4 月起門檻降至 £30,000。</p>
+  </div>
+</section>
+
+<section class="svc" aria-labelledby="svc-h">
+  <div class="wrap">
+    <h2 id="svc-h">我們的服務</h2>
+    <div class="svc-grid"><div class="svc-col"><h3>個人</h3><ul><li><a href="services.html#tax">個人稅務管理</a></li><li><a href="services.html#sa">自我評估報稅</a></li><li><a href="services.html#cross">英港跨境稅務</a></li></ul></div><div class="svc-col"><h3>公司</h3><ul><li><a href="services.html#setup">英國業務設立</a></li><li><a href="services.html#books">簿記與會計</a></li><li><a href="services.html#ct">公司所得稅</a></li><li><a href="services.html#payroll">計糧及 PAYE</a></li><li><a href="services.html#vat">增值稅 VAT</a></li><li><a href="services.html#outsourced">外判會計</a></li><li><a href="services.html#ecom">跨境電商會計</a></li></ul></div><div class="svc-col"><h3>物業</h3><ul><li><a href="services.html#sdlt">印花稅分析及退稅</a></li><li><a href="services.html#nrl">海外業主稅</a></li></ul></div></div>
+    <p><a class="more" href="services.html">詳細服務內容</a></p>
+  </div>
+</section>
+
+<section class="inds" aria-labelledby="inds-h">
+  <div class="wrap">
+    <h2 id="inds-h">客戶營業額由 £20,000 至 £500 萬</h2>
+    <ul class="ind-list"><li>外賣店及餐廳</li><li>中醫診所</li><li>採購及貿易代理</li><li>Amazon、eBay、Shopify 賣家</li><li>律師行</li><li>電訊及升學代理</li><li>建築及工程</li><li>印刷及資訊科技</li><li>業主</li><li>的士司機</li><li>投資者</li><li>翻譯</li></ul>
+    <p class="inds-note">我們亦與律師行、移民顧問及資產管理公司緊密合作。</p>
+  </div>
+</section>
+
+<section class="who" aria-labelledby="who-h">
+  <div class="wrap who-grid">
+    <div>
+      <h2 id="who-h">Henry Yip <span class="creds">BA, FCCA, HKICPA</span></h2>
+      <p>Henry 帶領本所，專長於非英國居籍（non-dom）稅務，曾協助數以百計客戶在英國及海外發展業務。</p>
+      <p>團隊由英國執業的 ACCA 特許公認會計師及香港 HKICPA 註冊會計師組成，累積超過 30 年執業經驗。</p>
+      <p><a class="more" href="about.html">關於本所</a></p>
+    </div>
+    <dl class="facts">
+      <div><dt>語言</dt><dd>English · <span lang="yue-Hant">廣東話</span> · <span lang="zh-Hant">普通話</span></dd></div>
+      <div><dt>執業資格</dt><dd>英國及香港</dd></div>
+      <div><dt>會籍</dt><dd>ACCA 會員及資深會員</dd></div>
+      <div><dt>肯定</dt><dd>獲提名 E-commerce Agent Awards</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="quotes" aria-labelledby="q-h">
+  <div class="wrap">
+    <h2 id="q-h">客戶怎樣說</h2>
+    <div class="q-row"><figure class="q q-main"><blockquote lang="zh-Hant">有一段時間，我從我的朋友那裡了解到Wong & Yip，他們非常樂於助人，知道我真正關心的問題，並給我一些好的解決方案。我向大家強烈推薦WY。</blockquote><figcaption>Eric Ng</figcaption></figure><figure class="q"><blockquote lang="en">For nearly 30 years, we have benefited from first-class, bespoke payroll and business advisory services from Wong & Yip Accountants. Their combination of skill, efficiency, and professionalism, while remaining approachable, makes them an integral part of our team.</blockquote><figcaption>Alex, UKTesla</figcaption></figure><figure class="q"><blockquote lang="en">Wong & Yip Accountants is the most trustworthy firm. They are highly competent and always put my business interests first.</blockquote><figcaption>Sam Leung, Nougart</figcaption></figure><figure class="q"><blockquote lang="en">Since moving our business to Wong & Yip Accountants, I’ve been impressed by their professionalism, friendly attitude, efficiency, and the consistently high standard of advice and service.</blockquote><figcaption>Chris, Wakuwaku Japan</figcaption></figure><figure class="q"><blockquote lang="en">Wong & Yip Accountants took the time to truly understand our business from the inside. Their recommendations proved invaluable, transforming the way we work.</blockquote><figcaption>Kurl, Interpropset</figcaption></figure><figure class="q"><blockquote lang="en">Wong & Yip Accountants are proactive and supportive in every new business venture, enabling me to make informed commercial decisions with confidence.</blockquote><figcaption>Tracy, Woodland International</figcaption></figure></div>
+  </div>
+</section>
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap contact-grid">
+    <div class="contact-text">
+      <h2 id="contact-h">安科茨 Hood Street</h2>
+      <p class="addr">Jactin House, 24 Hood Street, Ancoats, Manchester M4 6WX</p>
+      <ul class="walks"><li><b>12 分鐘</b> 畢架利花園電車站</li><li><b>12 分鐘</b> New Islington 電車站</li><li><b>15 分鐘</b> 曼徹斯特 Piccadilly 火車站</li></ul>
+      <p class="walk-note">步行時間按 OpenStreetMap 路線計算。</p>
+      <p class="big-links"><a href="tel:+447599614875">+44 7599 614875</a><a href="mailto:info@wongyipaccountants.co.uk">info@wongyipaccountants.co.uk</a></p>
+    </div>
+    <div class="map" data-map data-src="assets/vendor/maplibre/maplibre-gl.js" data-css="assets/vendor/maplibre/maplibre-gl.css" data-mapjs="assets/map.js?v=7">
+      <div class="map-fallback" aria-hidden="true"><img class="chev pin-chev" src="assets/img/mark.png" width="400" height="238" alt="" aria-hidden="true"><span>Jactin House</span></div>
+      <script type="application/json" id="map-data">{"home": [-2.2279647, 53.4843944], "routes": [{"name": "畢架利花園電車站", "min": 12, "kind": "tram", "start": [-2.236904, 53.4802768], "coords": [[-2.23692, 53.48027], [-2.23662, 53.48011], [-2.23663, 53.4801], [-2.2366, 53.48009], [-2.23655, 53.48005], [-2.23651, 53.48007], [-2.23648, 53.48008], [-2.23641, 53.48011], [-2.23637, 53.48012], [-2.23629, 53.48016], [-2.23622, 53.48023], [-2.23601, 53.48039], [-2.23597, 53.48041], [-2.23569, 53.48054], [-2.23526, 53.48075], [-2.23525, 53.48076], [-2.23518, 53.48078], [-2.23513, 53.4808], [-2.23504, 53.48083], [-2.23487, 53.48086], [-2.23468, 53.48086], [-2.23461, 53.48086], [-2.23456, 53.48085], [-2.23453, 53.48084], [-2.23427, 53.48099], [-2.23412, 53.48109], [-2.23408, 53.48111], [-2.23406, 53.48113], [-2.23386, 53.48126], [-2.23384, 53.48128], [-2.23382, 53.4813], [-2.23362, 53.48144], [-2.23369, 53.48147], [-2.23367, 53.48149], [-2.23364, 53.4815], [-2.2336, 53.48153], [-2.23358, 53.48155], [-2.23353, 53.48152], [-2.23281, 53.48201], [-2.23281, 53.48204], [-2.23279, 53.48206], [-2.23277, 53.48208], [-2.23271, 53.48213], [-2.2327, 53.48214], [-2.23267, 53.48214], [-2.23251, 53.48224], [-2.23251, 53.48225], [-2.2325, 53.48225], [-2.23249, 53.48226], [-2.23248, 53.48227], [-2.23225, 53.48243], [-2.23224, 53.48244], [-2.23224, 53.48244], [-2.23222, 53.48245], [-2.23222, 53.48246], [-2.23116, 53.48321], [-2.23113, 53.48325], [-2.23109, 53.48327], [-2.23091, 53.4834], [-2.23089, 53.48342], [-2.23087, 53.48344], [-2.23078, 53.4835], [-2.23076, 53.48352], [-2.23076, 53.48353], [-2.23088, 53.4836], [-2.23084, 53.48362], [-2.23081, 53.48364], [-2.23078, 53.48366], [-2.23075, 53.48368], [-2.23069, 53.48371], [-2.23066, 53.48374], [-2.23062, 53.48376], [-2.23055, 53.48372], [-2.23052, 53.48372], [-2.23023, 53.48392], [-2.23021, 53.48393], [-2.23017, 53.48395], [-2.22995, 53.4841], [-2.22993, 53.48412], [-2.22994, 53.48414], [-2.22993, 53.48414], [-2.22991, 53.48415], [-2.22989, 53.48417], [-2.22988, 53.48418], [-2.22986, 53.48418], [-2.22985, 53.48418], [-2.22963, 53.48432], [-2.22959, 53.48435], [-2.22954, 53.48433], [-2.22951, 53.48435], [-2.22948, 53.48436], [-2.22946, 53.48434], [-2.22916, 53.48417], [-2.22857, 53.48436], [-2.22853, 53.48437], [-2.22785, 53.4846], [-2.22784, 53.48459], [-2.22783, 53.48458], [-2.22781, 53.48456], [-2.22779, 53.48455], [-2.22804, 53.48448]]}, {"name": "New Islington 電車站", "min": 12, "kind": "tram", "start": [-2.2197957, 53.4810431], "coords": [[-2.21978, 53.48103], [-2.22012, 53.48086], [-2.22011, 53.48085], [-2.22014, 53.48083], [-2.22017, 53.48085], [-2.2202, 53.48087], [-2.22023, 53.4809], [-2.22025, 53.48093], [-2.22022, 53.48096], [-2.21994, 53.48112], [-2.22019, 53.48127], [-2.22025, 53.48124], [-2.22029, 53.48126], [-2.22043, 53.48136], [-2.22049, 53.48139], [-2.22049, 53.4814], [-2.22098, 53.48121], [-2.22103, 53.48125], [-2.22108, 53.48128], [-2.22111, 53.48132], [-2.22111, 53.48134], [-2.22111, 53.48136], [-2.2211, 53.48139], [-2.22106, 53.48142], [-2.22108, 53.48144], [-2.22119, 53.48151], [-2.22123, 53.48154], [-2.22141, 53.48159], [-2.2218, 53.48188], [-2.22181, 53.48189], [-2.22182, 53.4819], [-2.22185, 53.48193], [-2.22185, 53.48195], [-2.22189, 53.48197], [-2.22197, 53.48204], [-2.22201, 53.48206], [-2.22207, 53.48212], [-2.2224, 53.48235], [-2.22273, 53.48258], [-2.22274, 53.4826], [-2.22274, 53.48262], [-2.22273, 53.48264], [-2.22272, 53.48266], [-2.22271, 53.48267], [-2.22276, 53.4827], [-2.22287, 53.48276], [-2.2231, 53.48289], [-2.22326, 53.48298], [-2.22329, 53.483], [-2.22332, 53.48298], [-2.22335, 53.48297], [-2.22338, 53.48297], [-2.22342, 53.48298], [-2.22401, 53.48325], [-2.22419, 53.48311], [-2.22422, 53.48308], [-2.22435, 53.4831], [-2.2248, 53.48329], [-2.22479, 53.4833], [-2.22483, 53.4833], [-2.22494, 53.48335], [-2.22502, 53.4834], [-2.22506, 53.48344], [-2.22528, 53.48354], [-2.22561, 53.48367], [-2.22564, 53.48368], [-2.22568, 53.48369], [-2.22571, 53.48369], [-2.22576, 53.48369], [-2.22594, 53.4837], [-2.22598, 53.48369], [-2.22598, 53.48371], [-2.22587, 53.48386], [-2.22592, 53.4839], [-2.22595, 53.48393], [-2.22602, 53.484], [-2.22629, 53.48427], [-2.22659, 53.48454], [-2.22661, 53.48457], [-2.22668, 53.48455], [-2.22742, 53.48429], [-2.22747, 53.48434], [-2.22748, 53.48433], [-2.22751, 53.48432], [-2.22754, 53.48431], [-2.22756, 53.4843], [-2.22779, 53.48455], [-2.22804, 53.48448]]}, {"name": "曼徹斯特 Piccadilly 火車站", "min": 15, "kind": "rail", "start": [-2.2308334, 53.4774198], "coords": [[-2.23079, 53.47741], [-2.23079, 53.47742], [-2.23069, 53.47757], [-2.23092, 53.47765], [-2.23101, 53.47768], [-2.23125, 53.47777], [-2.2314, 53.47781], [-2.2314, 53.47781], [-2.23156, 53.47787], [-2.23165, 53.4779], [-2.23172, 53.47794], [-2.23174, 53.47795], [-2.23178, 53.47799], [-2.23181, 53.47806], [-2.23183, 53.47815], [-2.23185, 53.47824], [-2.23186, 53.47833], [-2.23193, 53.47844], [-2.23197, 53.4785], [-2.23206, 53.47856], [-2.23221, 53.47866], [-2.2323, 53.4787], [-2.23241, 53.47879], [-2.23247, 53.47885], [-2.23251, 53.4789], [-2.23253, 53.47894], [-2.23256, 53.47898], [-2.23257, 53.479], [-2.2326, 53.47904], [-2.23263, 53.47907], [-2.23263, 53.47908], [-2.23264, 53.47909], [-2.23271, 53.47917], [-2.23307, 53.47962], [-2.23309, 53.47963], [-2.2331, 53.47966], [-2.23311, 53.47966], [-2.23326, 53.4798], [-2.23344, 53.47998], [-2.23346, 53.48], [-2.23347, 53.48001], [-2.23348, 53.48002], [-2.2335, 53.48005], [-2.23383, 53.48035], [-2.23405, 53.48056], [-2.23419, 53.48067], [-2.23426, 53.48073], [-2.23427, 53.48073], [-2.23431, 53.48076], [-2.23429, 53.48078], [-2.234, 53.48101], [-2.23396, 53.48103], [-2.23392, 53.48105], [-2.23339, 53.48127], [-2.23341, 53.48128], [-2.23341, 53.4813], [-2.23341, 53.48134], [-2.23341, 53.48137], [-2.23341, 53.48139], [-2.23337, 53.48144], [-2.23336, 53.48145], [-2.23339, 53.48147], [-2.23332, 53.48151], [-2.2327, 53.48195], [-2.23266, 53.48195], [-2.23264, 53.48196], [-2.23261, 53.48199], [-2.23257, 53.48202], [-2.23255, 53.48204], [-2.23255, 53.48206], [-2.23211, 53.48237], [-2.23211, 53.48237], [-2.2321, 53.48238], [-2.23208, 53.4824], [-2.23207, 53.4824], [-2.23156, 53.48276], [-2.23156, 53.48276], [-2.23155, 53.48276], [-2.23153, 53.48278], [-2.23152, 53.48278], [-2.23098, 53.48318], [-2.23096, 53.48319], [-2.23094, 53.48321], [-2.23063, 53.48342], [-2.23057, 53.48342], [-2.23053, 53.48345], [-2.23049, 53.48347], [-2.23046, 53.4835], [-2.23042, 53.48352], [-2.23038, 53.48355], [-2.23035, 53.48357], [-2.23032, 53.48359], [-2.23045, 53.48367], [-2.23045, 53.48369], [-2.23016, 53.48387], [-2.23013, 53.48389], [-2.2301, 53.48391], [-2.23008, 53.48392], [-2.23006, 53.48393], [-2.22987, 53.48406], [-2.22985, 53.48407], [-2.22981, 53.48407], [-2.2298, 53.48406], [-2.22979, 53.48407], [-2.22977, 53.48408], [-2.22974, 53.4841], [-2.22974, 53.48411], [-2.22975, 53.48413], [-2.22949, 53.4843], [-2.22951, 53.48431], [-2.22954, 53.48433], [-2.22951, 53.48435], [-2.22948, 53.48436], [-2.22946, 53.48434], [-2.22916, 53.48417], [-2.22857, 53.48436], [-2.22853, 53.48437], [-2.22785, 53.4846], [-2.22784, 53.48459], [-2.22783, 53.48458], [-2.22781, 53.48456], [-2.22779, 53.48455], [-2.22804, 53.48448]]}], "label": "曼城黃葉", "mark": "assets/img/mark.png"}</script>
+    </div>
+  </div>
+  <div class="wrap">
+    <form class="ask" data-ask novalidate>
+      <h3>留下你的問題</h3>
+      <div class="ask-grid">
+        <label>你的名字<input name="name" autocomplete="name" required></label>
+        <label>電話或電郵<input name="reach" autocomplete="tel" required></label>
+        <label>查詢服務<select name="topic"><option>個人稅務管理</option><option>自我評估報稅</option><option>英港跨境稅務</option><option>英國業務設立</option><option>簿記與會計</option><option>公司所得稅</option><option>計糧及 PAYE</option><option>增值稅 VAT</option><option>外判會計</option><option>跨境電商會計</option><option>印花稅分析及退稅</option><option>海外業主稅</option></select></label>
+        <label class="wide">你的問題<textarea name="msg" rows="3" required>你好，我有稅務問題想查詢，請聯絡我。</textarea></label>
+      </div>
+      <p class="ask-err" data-err hidden>請填寫名字、聯絡方法及問題。</p>
+      <div class="ask-btns">
+        <button type="submit" name="via" value="wa">用 WhatsApp 發送</button>
+        <button type="submit" name="via" value="mail" class="ghost">用電郵發送</button>
+      </div>
+      <p class="ask-note">按下後會開啟 WhatsApp 或電郵程式，並已填好你的訊息。本網站不會儲存任何資料。</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <img class="chev foot-chev" src="assets/img/mark.png" width="400" height="238" alt="" aria-hidden="true">
+      <p class="foot-name">Wong &amp; Yip Accountants Ltd<br><span lang="zh-Hant">曼城黃葉（香港）會計師樓</span></p>
+      <p>Jactin House, 24 Hood Street, Ancoats, Manchester M4 6WX</p>
+    </div>
+    <div>
+      <p><a href="tel:+447599614875">+44 7599 614875</a> · 電話及 WhatsApp</p>
+      <p><a href="mailto:info@wongyipaccountants.co.uk">info@wongyipaccountants.co.uk</a></p>
+      <p><a href="https://www.facebook.com/wongyipaccountants">Facebook</a></p>
+    </div>
+    <div>
+      <p><a href="services.html">服務</a> · <a href="stamp-duty.html">印花稅</a> · <a href="about.html">關於我們</a></p>
+      <p><a href="privacy.html">私隱及無障礙</a> · <a href="en/" lang="en">English</a></p>
+      <p class="foot-small">本網站的計算工具只提供估算，並非稅務意見。稅率適用於英格蘭及北愛爾蘭，已於 2026 年 11 月按 GOV.UK 核對。</p>
+      <p class="foot-small">Unofficial redesign concept by <a href="https://ux-circles.com/professionals">UX CIRCLES</a></p>
+    </div>
+  </div>
+</footer>
+<nav class="mbar" aria-label="快捷操作">
+  <a href="tel:+447599614875">致電</a>
+  <a href="https://wa.me/447599614875">WhatsApp</a>
+  <a href="mailto:info@wongyipaccountants.co.uk">電郵</a>
+</nav>
+</body>
+</html>
