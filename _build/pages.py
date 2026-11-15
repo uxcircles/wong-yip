@@ -44,6 +44,7 @@ def p(prefix, path):
 
 
 PFX = ""
+PG = ""  # prefix for links between pages of the same language (assets use PFX/prefix)
 
 
 def chevron(cls=""):
@@ -108,7 +109,7 @@ def header(prefix, slug):
     sw_label = L("中文", "English")
     sw_lang = L("zh-Hant", "en")
     links = "".join(
-        f'<a href="{prefix}{h}"{" aria-current=page" if h == slug else ""}>{t}</a>' for h, t in nav_items(prefix)
+        f'<a href="{PG}{h}"{" aria-current=page" if h == slug else ""}>{t}</a>' for h, t in nav_items(prefix)
     )
     return f'''<body>
 <a class="skip" href="#main">{L("Skip to content", "跳至內容")}</a>
@@ -120,7 +121,7 @@ def header(prefix, slug):
 </div>
 <header class="site-head" id="top">
   <div class="wrap head-in">
-    <a class="brand" href="{prefix}index.html" aria-label="{L('Wong &amp; Yip Accountants, home', '曼城黃葉會計師樓 首頁')}">
+    <a class="brand" href="{PG}index.html" aria-label="{L('Wong &amp; Yip Accountants, home', '曼城黃葉會計師樓 首頁')}">
       <img src="{prefix}assets/img/logo.png" width="1000" height="205" alt="Wong &amp; Yip Accountants Limited">
       <span class="brand-zh" lang="zh-Hant">曼城黃葉（香港）會計師樓</span>
     </a>
@@ -158,8 +159,8 @@ def footer(prefix, slug):
       <p><a href="https://www.facebook.com/wongyipaccountants">Facebook</a></p>
     </div>
     <div>
-      <p><a href="{prefix}services.html">{L('Services', '服務')}</a> · <a href="{prefix}stamp-duty.html">{L('Stamp Duty', '印花稅')}</a> · <a href="{prefix}about.html">{L('About', '關於我們')}</a></p>
-      <p><a href="{prefix}privacy.html">{L('Privacy and accessibility', '私隱及無障礙')}</a> · <a href="{sw_href}" lang="{L('zh-Hant', 'en')}">{L('中文', 'English')}</a></p>
+      <p><a href="{PG}services.html">{L('Services', '服務')}</a> · <a href="{PG}stamp-duty.html">{L('Stamp Duty', '印花稅')}</a> · <a href="{PG}about.html">{L('About', '關於我們')}</a></p>
+      <p><a href="{PG}privacy.html">{L('Privacy and accessibility', '私隱及無障礙')}</a> · <a href="{sw_href}" lang="{L('zh-Hant', 'en')}">{L('中文', 'English')}</a></p>
       <p class="foot-small">{L('Tools on this site give estimates, not tax advice. Rates for England and Northern Ireland, checked against GOV.UK in November 2026.', '本網站的計算工具只提供估算，並非稅務意見。稅率適用於英格蘭及北愛爾蘭，已於 2026 年 11 月按 GOV.UK 核對。')}</p>
       <p class="foot-small"><span class="concept-note">{L("Unofficial redesign concept by ", "非官方概念設計： ")}<a href="{UXC}" target="_blank" rel="noopener">UX CIRCLES</a></span></p>
     </div>
@@ -334,7 +335,7 @@ def contact_section(prefix):
 def home(prefix):
     groups = ""
     for gid, gname, items in SERVICES_():
-        lis = "".join(f'<li><a href="{prefix}services.html#{sid}">{t}</a></li>' for sid, t, _ in items)
+        lis = "".join(f'<li><a href="{PG}services.html#{sid}">{t}</a></li>' for sid, t, _ in items)
         art = {"personal": "tax-return", "business": "company", "property": "landlord"}[gid]
         groups += f'<div class="svc-col">{spot(art)}<h3>{gname}</h3><ul>{lis}</ul></div>'
     inds = "".join(f"<li>{i}</li>" for i in INDUSTRIES_())
@@ -349,7 +350,7 @@ def home(prefix):
       <img src="{prefix}assets/img/hk-to-manchester-1000.webp" srcset="{prefix}assets/img/hk-to-manchester-640.webp 640w, {prefix}assets/img/hk-to-manchester-1000.webp 1000w, {prefix}assets/img/hk-to-manchester-1600.webp 1600w" sizes="(min-width: 1021px) 560px, 100vw" width="1000" height="540" alt="{L('Paper-cut illustration: a Hong Kong tenement block, a paper plane, and a red-brick Ancoats cotton mill beside the Rochdale Canal.', '剪紙插圖：香港唐樓、一架紙飛機，以及 Rochdale 運河旁的 Ancoats 紅磚紡織廠。')}" fetchpriority="low">
     </figure>
     {sdlt_tool()}
-    <p class="hero-foot">{L('Wong &amp; Yip Accountants, Manchester. ACCA and HKICPA accountants who speak English, Cantonese and Mandarin.', '曼城黃葉會計師樓：ACCA 及 HKICPA 會計師，以英語、廣東話及普通話服務。')} <a href="{prefix}stamp-duty.html">{L('How it is worked out', '計算方法及退稅')}</a></p>
+    <p class="hero-foot">{L('Wong &amp; Yip Accountants, Manchester. ACCA and HKICPA accountants who speak English, Cantonese and Mandarin.', '曼城黃葉會計師樓：ACCA 及 HKICPA 會計師，以英語、廣東話及普通話服務。')} <a href="{PG}stamp-duty.html">{L('How it is worked out', '計算方法及退稅')}</a></p>
   </div>
 </section>
 
@@ -365,7 +366,7 @@ def home(prefix):
   <div class="wrap">
     <h2 id="svc-h">{L('What we do', '我們的服務')}</h2>
     <div class="svc-grid">{groups}</div>
-    <p><a class="more" href="{prefix}services.html">{L('All services in detail', '詳細服務內容')}</a></p>
+    <p><a class="more" href="{PG}services.html">{L('All services in detail', '詳細服務內容')}</a></p>
   </div>
 </section>
 
@@ -383,7 +384,7 @@ def home(prefix):
       <h2 id="who-h">Henry Yip <span class="creds">BA, FCCA, HKICPA</span></h2>
       <p>{L('Henry leads the firm. He is known for non-UK domicile taxation and has helped hundreds of clients with their UK and international business.', 'Henry 帶領本所，專長於非英國居籍（non-dom）稅務，曾協助數以百計客戶在英國及海外發展業務。')}</p>
       <p>{L('The team is made up of ACCA chartered certified accountants practising in the UK and HKICPA certified public accountants from Hong Kong, with more than 30 years of practice between them.', '團隊由英國執業的 ACCA 特許公認會計師及香港 HKICPA 註冊會計師組成，累積超過 30 年執業經驗。')}</p>
-      <p><a class="more" href="{prefix}about.html">{L('About the firm', '關於本所')}</a></p>
+      <p><a class="more" href="{PG}about.html">{L('About the firm', '關於本所')}</a></p>
     </div>
     <dl class="facts">
       <div><dt>{L('Languages', '語言')}</dt><dd>English · <span lang="yue-Hant">廣東話</span> · <span lang="zh-Hant">普通話</span></dd></div>
@@ -547,7 +548,7 @@ def notfound(prefix):
   <div class="wrap">
     <h1>找不到這一頁 <span lang="en">Page not found</span></h1>
     <p>{L('Try the Stamp Duty calculator, our services, or call us on', '可以試試印花稅計算、我們的服務，或致電')} <a href="tel:{TEL}">{PHONE}</a>.</p>
-    <p><a class="more" href="{prefix}index.html">返回首頁</a> <a class="more" href="{prefix}stamp-duty.html">印花稅</a> <a class="more" lang="en" href="{prefix}en/">English</a></p>
+    <p><a class="more" href="{PG}index.html">返回首頁</a> <a class="more" href="{PG}stamp-duty.html">印花稅</a> <a class="more" lang="en" href="{prefix}en/">English</a></p>
   </div>
 </section>'''
     return page(prefix, "404.html", L("Page not found · Wong & Yip", "找不到頁面 · 曼城黃葉"), "", body)
@@ -559,11 +560,11 @@ if __name__ == "__main__":
     for lang, sub, prefix in (("zh", "", ""), ("en", "en", "../")):
         LANG = lang
         os.makedirs(os.path.join(ROOT, sub), exist_ok=True)
-        PFX = prefix
+        PFX, PG = prefix, ""
         for name, fn in PAGES:
             with open(os.path.join(ROOT, sub, name), "w", encoding="utf-8") as f:
                 f.write(fn(prefix))
-    LANG, PFX = "zh", "/wong-yip/"  # GitHub Pages serves the root 404.html for every missing path: absolute links
+    LANG, PFX, PG = "zh", "/wong-yip/", "/wong-yip/"  # GitHub Pages serves the root 404.html for every missing path: absolute links
     with open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8") as f:
         f.write(notfound("/wong-yip/"))
     print("built", len(PAGES) * 2 + 1, "pages")
