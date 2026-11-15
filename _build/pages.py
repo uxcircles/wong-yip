@@ -9,7 +9,7 @@ import os
 
 BUILD = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BUILD)
-V = "10"  # cache-bust: bump on every CSS/JS change
+V = "11"  # cache-bust: bump on every CSS/JS change
 
 LANG = "zh"
 
@@ -52,11 +52,11 @@ def chevron(cls=""):
 
 
 ALT = {
-    "tax-return": ("Paper-cut illustration: a Self Assessment form marked SA100, a calendar showing 31 January, a pen and the W·Y stamp", "剪紙插圖：一份 SA100 自我評估報稅表、顯示 1 月 31 日的月曆、一支筆及 W·Y 印章"),
-    "company": ("Paper-cut illustration: a small shopfront with a striped awning, a sign reading & Co Ltd, an OPEN sign and a certificate with a seal", "剪紙插圖：掛著「& Co Ltd」招牌和條紋簷篷的小店、OPEN 牌，以及一張蓋有封印的證書"),
-    "payroll": ("Paper-cut illustration: a payslip coming out of an envelope, a pay-day calendar showing the 25th and a stack of coins", "剪紙插圖：從信封抽出的糧單、顯示 25 號出糧日的月曆及一疊硬幣"),
-    "landlord": ("Paper-cut illustration: a red-brick terraced house with a TO LET board, a key on a tag and a paper plane flying away", "剪紙插圖：掛著 TO LET 牌的紅磚排屋、一條掛著名牌的鎖匙，以及飛走的紙飛機"),
-    "lost": ("Paper-cut illustration: a paper plane looping off course and a torn boarding pass reading MAN and 404", "剪紙插圖：繞圈迷路的紙飛機，以及撕開成「MAN」和「404」兩半的登機證"),
+    "tax-return": ("Paper-cut illustration: a tax return form and a calendar showing 31 January", "剪紙插圖：一份報稅表和顯示 1 月 31 日的月曆"),
+    "company": ("Paper-cut illustration: a small shopfront with an awning", "剪紙插圖：一間有簷篷的小店"),
+    "payroll": ("Paper-cut illustration: a payslip coming out of an envelope and a stack of coins", "剪紙插圖：從信封抽出的糧單和一疊硬幣"),
+    "landlord": ("Paper-cut illustration: a red-brick house with a TO LET board", "剪紙插圖：一間掛著 TO LET 牌的紅磚屋"),
+    "lost": ("Paper-cut illustration: a paper plane, a cloud and a ticket reading 404", "剪紙插圖：一架紙飛機、一朵雲和寫著 404 的票"),
 }
 
 
@@ -347,7 +347,7 @@ def home(prefix):
   <div class="wrap hero-in">
     <h1 id="hero-h">{L('Know your stamp duty before you make an offer', '買樓之前，先計清楚印花稅')}</h1>
     <figure class="hero-illo">
-      <img src="{prefix}assets/img/hk-to-manchester-1000.webp" srcset="{prefix}assets/img/hk-to-manchester-640.webp 640w, {prefix}assets/img/hk-to-manchester-1000.webp 1000w, {prefix}assets/img/hk-to-manchester-1600.webp 1600w" sizes="(min-width: 1021px) 560px, 100vw" width="1000" height="540" alt="{L('Paper-cut illustration: a Hong Kong tenement block with laundry poles and a 黃葉 sign, a boarding pass from HKG to MAN, and a red-brick Ancoats cotton mill beside the Rochdale Canal with a narrowboat.', '剪紙插圖：掛著晾衫竹和「黃葉」招牌的香港唐樓、一張由香港飛往曼城的登機證，以及 Rochdale 運河旁的 Ancoats 紅磚紡織廠和窄船。')}" fetchpriority="low">
+      <img src="{prefix}assets/img/hk-to-manchester-1000.webp" srcset="{prefix}assets/img/hk-to-manchester-640.webp 640w, {prefix}assets/img/hk-to-manchester-1000.webp 1000w, {prefix}assets/img/hk-to-manchester-1600.webp 1600w" sizes="(min-width: 1021px) 560px, 100vw" width="1000" height="540" alt="{L('Paper-cut illustration: a Hong Kong tenement block, a paper plane, and a red-brick Ancoats cotton mill beside the Rochdale Canal.', '剪紙插圖：香港唐樓、一架紙飛機，以及 Rochdale 運河旁的 Ancoats 紅磚紡織廠。')}" fetchpriority="low">
     </figure>
     {sdlt_tool()}
     <p class="hero-foot">{L('Wong &amp; Yip Accountants, Manchester. ACCA and HKICPA accountants who speak English, Cantonese and Mandarin.', '曼城黃葉會計師樓：ACCA 及 HKICPA 會計師，以英語、廣東話及普通話服務。')} <a href="{prefix}stamp-duty.html">{L('How it is worked out', '計算方法及退稅')}</a></p>
@@ -447,7 +447,7 @@ def stamp(prefix):
   <div class="wrap hero-in">
     <h1 id="hero-h">{L('Stamp Duty for people moving from Hong Kong', '由香港來英買樓的印花稅')}</h1>
     <figure class="hero-illo">
-      <img src="{prefix}assets/img/stamp-duty-1000.webp" srcset="{prefix}assets/img/stamp-duty-640.webp 640w, {prefix}assets/img/stamp-duty-1000.webp 1000w, {prefix}assets/img/stamp-duty-1600.webp 1600w" sizes="(min-width: 1021px) 560px, 100vw" width="1000" height="540" alt="{L('Paper-cut illustration: a Stamp Duty (SDLT) receipt, a large key with a W·Y fob and the front door of a red-brick house, number 24', '剪紙插圖：一張印花稅（SDLT）收據、一條掛著 W·Y 匙扣的大鎖匙，以及 24 號紅磚屋的大門')}">
+      <img src="{prefix}assets/img/stamp-duty-1000.webp" srcset="{prefix}assets/img/stamp-duty-640.webp 640w, {prefix}assets/img/stamp-duty-1000.webp 1000w, {prefix}assets/img/stamp-duty-1600.webp 1600w" sizes="(min-width: 1021px) 560px, 100vw" width="1000" height="540" alt="{L('Paper-cut illustration: a Stamp Duty (SDLT) receipt and a large key', '剪紙插圖：一張印花稅（SDLT）收據和一條大鎖匙')}">
     </figure>
     {sdlt_tool(full=True)}
   </div>

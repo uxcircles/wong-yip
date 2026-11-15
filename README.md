@@ -46,10 +46,8 @@ python3 _build/fonts.py      # 改了中文字之後重新子集化字型
 - 客戶評語：全部取自現有網站，未經改動。
 - 私隱聲明為草擬，須黃葉審閱。
 - 照片：沒有使用任何圖庫相片，只用了黃葉自己的標誌。
-- 插圖：全部自行繪製，剪紙風格加深紫細線，顏色取自黃葉標誌，沒有圖庫圖片。
-  - 首頁首屏「由香港到曼城」：唐樓、HKG→MAN 登機證、Ancoats 紡織廠及 Rochdale 運河（`_build/illo/hk_to_manchester.py`）
-  - 印花稅頁首屏：SDLT 收據、W·Y 匙扣鎖匙、24 號紅磚屋大門
-  - 服務：報稅表（1 月 31 日）、開公司（& Co Ltd 小店）、計糧（25 號出糧日）、海外業主（TO LET 排屋）
-  - 404：迷路的紙飛機
-  - 以上由 `_build/illo/set.py`（共用 `_build/illo/paper.py`）產生 SVG 原檔於 `assets/illo/`；網站使用匯出的 WebP，手機不必運算 SVG 濾鏡
+- 插圖：全部自行繪製，純剪紙風格（紙紋加陰影，沒有線條），每張只有兩三個大形狀，顏色取自黃葉標誌，沒有圖庫圖片。
+  - 首頁首屏：香港唐樓、紙飛機、Ancoats 紡織廠及 Rochdale 運河；印花稅頁首屏：SDLT 收據及鎖匙
+  - 服務：報稅表與 1 月 31 日月曆、小店、糧單信封與硬幣、TO LET 紅磚屋；404：紙飛機
+  - 原檔由 `_build/illo/simple.py`（共用 `_build/illo/paper.py`）產生於 `assets/illo/`；網站使用匯出的 WebP，手機不必運算 SVG 濾鏡
 - 地圖：MapLibre GL JS（BSD）＋ OpenFreeMap；步行時間來自 routing.openstreetmap.de 的路線。
