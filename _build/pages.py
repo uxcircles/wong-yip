@@ -9,7 +9,7 @@ import os
 
 BUILD = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BUILD)
-V = "11"  # cache-bust: bump on every CSS/JS change
+V = "12"  # cache-bust: bump on every CSS/JS change
 
 LANG = "zh"
 
@@ -112,11 +112,10 @@ def header(prefix, slug):
     )
     return f'''<body>
 <a class="skip" href="#main">{L("Skip to content", "跳至內容")}</a>
-<div class="concept">
+<div class="concept" role="note">
   <div class="wrap concept-in">
-    <span class="concept-tag">Concept / 概念</span>
-    <span>{L('Redesign concept. Not the official <a href="' + OFFICIAL + '">Wong &amp; Yip Accountants</a> website.', '重新設計概念，並非 <a href="' + OFFICIAL + '">曼城黃葉會計師樓</a> 官方網站。')}</span>
-    <a class="concept-by" href="{UXC}">Designed by UX CIRCLES ↗</a>
+    <p><span class="concept-tag">Concept / 概念</span><span class="concept-long">{L('Redesign concept. Not the official <a href="' + OFFICIAL + '">Wong &amp; Yip Accountants</a> website.', '重新設計概念，並非 <a href="' + OFFICIAL + '">曼城黃葉會計師樓</a> 官方網站。')}</span></p>
+    <a class="concept-by" href="{UXC}"><span class="concept-by-txt">Designed by </span>UX CIRCLES ↗</a>
   </div>
 </div>
 <header class="site-head" id="top">
