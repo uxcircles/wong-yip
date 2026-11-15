@@ -43,13 +43,16 @@ html[lang^="zh"] h1, html[lang^="zh"] h2 { letter-spacing: .02em; }
 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* concept bar: scrolls away */
-.concept { background: var(--purple-deep); color: #ece3f4; font-size: .82rem; line-height: 1.4; }
-.concept-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 38px; }
-.concept-in p { margin: 0; display: flex; align-items: center; gap: 12px; min-width: 0; }
-.concept a { color: #fff; }
-.concept-tag { background: var(--yellow); color: var(--purple); font-weight: 700; padding: 1px 8px; border-radius: 3px; white-space: nowrap; }
-.concept-by { white-space: nowrap; text-decoration: none; }
-.concept-by:hover { text-decoration: underline; }
+.concept-bar { background: var(--purple-deep); color: #d9cbe6; font-size: 13px; position: relative; z-index: 31; }
+.concept-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 36px; }
+.concept-inner p { margin: 0; display: flex; gap: 10px; align-items: center; min-width: 0; }
+.concept-long { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.concept-tag { flex-shrink: 0; background: var(--yellow); color: var(--purple); font-weight: 600; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 7px; border-radius: 2px; }
+.concept-bar a { color: #fff; }
+.concept-inner > a { display: inline-flex; align-items: center; gap: 5px; text-decoration: none; white-space: nowrap; }
+.concept-inner > a strong { letter-spacing: .06em; }
+.concept-inner > a svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; }
+.concept-inner > a:hover { color: var(--yellow); }
 
 /* header */
 .site-head { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 1px solid var(--line); }
@@ -281,7 +284,7 @@ details p { margin-top: 0; }
   .brand img { width: 140px; }
   .brand-zh { font-size: .66rem; letter-spacing: .06em; }
   .head-in { gap: 12px; }
-  .concept-long, .concept-by-txt { display: none; }
+  .concept-long { display: none; }
   .svc-grid, .svc-items, .tables, .why, .foot-grid, .ask-grid { grid-template-columns: minmax(0, 1fr); }
   .hero-chev { width: 150px; right: -30px; top: -10px; opacity: .9; }
   .hero h1 { padding-right: 70px; font-size: clamp(1.75rem, 1.2rem + 3.6vw, 2.4rem); }

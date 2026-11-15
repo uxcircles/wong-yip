@@ -9,7 +9,7 @@ import os
 
 BUILD = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BUILD)
-V = "14"  # cache-bust: bump on every CSS/JS change
+V = "15"  # cache-bust: bump on every CSS/JS change
 
 LANG = "zh"
 
@@ -112,10 +112,10 @@ def header(prefix, slug):
     )
     return f'''<body>
 <a class="skip" href="#main">{L("Skip to content", "跳至內容")}</a>
-<div class="concept" role="note">
-  <div class="wrap concept-in">
-    <p><span class="concept-tag">{L("Concept", "概念")}</span><span class="concept-long">{L('Redesign concept. Not the official <a href="' + OFFICIAL + '">Wong &amp; Yip Accountants</a> website.', '重新設計概念，並非 <a href="' + OFFICIAL + '">曼城黃葉會計師樓</a> 官方網站。')}</span></p>
-    <a class="concept-by" href="{UXC}"><span class="concept-by-txt">Designed by </span>UX CIRCLES ↗</a>
+<div class="concept-bar" role="note">
+  <div class="wrap concept-inner">
+    <p><span class="concept-tag">{L("Concept", "概念")}</span><span class="concept-long">{L('Concept redesign. Not the <a href="' + OFFICIAL + '" target="_blank" rel="noopener">official Wong &amp; Yip Accountants website</a>.', '概念設計展示，並非 <a href="' + OFFICIAL + '" target="_blank" rel="noopener">曼城黃葉會計師樓官方網站</a>。')}</span></p>
+    <a href="{UXC}" target="_blank" rel="noopener"><span class="concept-by">{L("Designed by ", "設計：")}</span><strong>UX CIRCLES</strong> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
   </div>
 </div>
 <header class="site-head" id="top">
@@ -161,7 +161,7 @@ def footer(prefix, slug):
       <p><a href="{prefix}services.html">{L('Services', '服務')}</a> · <a href="{prefix}stamp-duty.html">{L('Stamp Duty', '印花稅')}</a> · <a href="{prefix}about.html">{L('About', '關於我們')}</a></p>
       <p><a href="{prefix}privacy.html">{L('Privacy and accessibility', '私隱及無障礙')}</a> · <a href="{sw_href}" lang="{L('zh-Hant', 'en')}">{L('中文', 'English')}</a></p>
       <p class="foot-small">{L('Tools on this site give estimates, not tax advice. Rates for England and Northern Ireland, checked against GOV.UK in November 2026.', '本網站的計算工具只提供估算，並非稅務意見。稅率適用於英格蘭及北愛爾蘭，已於 2026 年 11 月按 GOV.UK 核對。')}</p>
-      <p class="foot-small">Unofficial redesign concept by <a href="{UXC}">UX CIRCLES</a></p>
+      <p class="foot-small"><span class="concept-note">{L("Unofficial redesign concept by ", "非官方概念設計： ")}<a href="{UXC}" target="_blank" rel="noopener">UX CIRCLES</a></span></p>
     </div>
   </div>
 </footer>
