@@ -133,7 +133,6 @@ def header(prefix, slug):
   <div class="menu" id="menu" hidden>
     <nav class="wrap" aria-label="{L('Menu', '選單')}">
       {links}
-      <a href="{sw_href}" lang="{sw_lang}">{sw_label}</a>
       <a href="tel:{TEL}">{L('Call', '致電')} {PHONE}</a>
       <a href="https://wa.me/{WA}">WhatsApp</a>
     </nav>
