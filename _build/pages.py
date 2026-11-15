@@ -6,10 +6,11 @@ Traditional Chinese at /, English at /en/. Every string is written as L(english,
 """
 import json
 import os
+import urllib.parse
 
 BUILD = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BUILD)
-V = "17"  # cache-bust: bump on every CSS/JS change
+V = "18"  # cache-bust: bump on every CSS/JS change
 
 LANG = "zh"
 
@@ -141,6 +142,30 @@ def header(prefix, slug):
 '''
 
 
+def wa_link(msg):
+    return f"https://wa.me/{WA}?text=" + urllib.parse.quote(msg)
+
+
+def mbar(slug):
+    """Phone action bar: same look on every page; the third button and the WhatsApp message follow the page."""
+    msg = {
+        "index.html": L("Hello, I have a tax question.", "你好，我有稅務問題想查詢。"),
+        "stamp-duty.html": L("Hello, I would like to ask about Stamp Duty.", "你好，我想查詢印花稅。"),
+        "services.html": L("Hello, I would like a quote for your services.", "你好，我想查詢服務報價。"),
+    }.get(slug, L("Hello, I have a question.", "你好，我想查詢。"))
+    third = {
+        "index.html": ("#contact", L("Ask us", "查詢")),
+        "stamp-duty.html": ("#contact", L("Ask us", "查詢")),
+        "services.html": ("#contact", L("Get a quote", "索取報價")),
+    }.get(slug, (f"mailto:{EMAIL}", L("Email", "電郵")))
+    calc = " data-wa-sdlt" if slug in ("index.html", "stamp-duty.html") else ""
+    return f'''<nav class="mbar" aria-label="{L('Quick actions', '快捷操作')}">
+  <a href="tel:{TEL}">{L('Call', '致電')}</a>
+  <a href="{wa_link(msg)}"{calc}>WhatsApp</a>
+  <a href="{third[0]}">{third[1]}</a>
+</nav>'''
+
+
 def footer(prefix, slug):
     sw_href = ("../" if LANG == "en" else "en/") + slug.replace("index.html", "")
     if slug == "404.html":
@@ -165,11 +190,7 @@ def footer(prefix, slug):
     </div>
   </div>
 </footer>
-<nav class="mbar" aria-label="{L('Quick actions', '快捷操作')}">
-  <a href="tel:{TEL}">{L('Call', '致電')}</a>
-  <a href="https://wa.me/{WA}">WhatsApp</a>
-  <a href="mailto:{EMAIL}">{L('Email', '電郵')}</a>
-</nav>
+{mbar(slug)}
 </body>
 </html>
 '''
@@ -203,6 +224,7 @@ def sdlt_tool(full=False):
     <span class="r-eff" data-eff></span>
     <table><caption class="vh">{L('Tax by band', '各級稅款')}</caption><tbody data-rows></tbody></table>
     <span class="r-notes" data-notes></span>
+    <a class="r-wa" data-wa-sdlt href="{wa_link(L("Hello, I would like to ask about Stamp Duty.", "你好，我想查詢印花稅。"))}">{L('WhatsApp this estimate to us', '把這個估算 WhatsApp 給我們')}</a>
   </output>
   <p class="tool-scope" id="{hid}-scope">{L('Residential rates from 1 April 2025, England and Northern Ireland. An estimate, not advice.', '2025 年 4 月 1 日起英格蘭及北愛爾蘭住宅稅率。只供估算，並非稅務意見。')}</p>
 </form>'''

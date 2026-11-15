@@ -72,6 +72,12 @@
       out.eff.textContent = price ? T(`${(r.total / price * 100).toFixed(2)}% of ${gbp(price)}`, `相當於樓價 ${gbp(price)} 的 ${(r.total / price * 100).toFixed(2)}%`) : T('Enter a price', '請輸入樓價');
       out.rows.innerHTML = r.rows.map(([b, rate, tax]) => `<tr><td>${b}</td><td>${rate}</td><td>${gbp(tax)}</td></tr>`).join('');
       out.notes.innerHTML = r.notes.map((n) => `<p>${n}</p>`).join('');
+      // WhatsApp links on this page carry the estimate, so the accountant sees the case straight away
+      const type = { ftb: T('My first home ever', '首次置業'), home: T('Only this home', '只有這一個物業'), add: T('More than one home', '多於一個物業') }[form.elements.type.value];
+      const msg = T(
+        `Hello, I would like you to check my Stamp Duty.\nPrice: ${gbp(price)}\nAfter buying I will own: ${type}\nNon-UK resident: ${form.elements.nonres.checked ? 'Yes' : 'No'}\nWebsite estimate: ${gbp(r.total)}`,
+        `你好，想請你們確認我的印花稅：\n樓價：${gbp(price)}\n買入後：${type}\n非英國居民：${form.elements.nonres.checked ? '是' : '否'}\n網站估算：${gbp(r.total)}`);
+      if (price) document.querySelectorAll('[data-wa-sdlt]').forEach((a) => { a.href = 'https://wa.me/447599614875?text=' + encodeURIComponent(msg); });
     };
     input.addEventListener('input', () => {
       const digits = input.value.replace(/\D/g, '').slice(0, 9);
