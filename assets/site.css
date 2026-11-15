@@ -320,3 +320,13 @@ details p { margin-top: 0; }
   .hero-home .hero-in { grid-template-columns: minmax(0, 1fr); grid-template-areas: "h" "tool" "foot" "illo"; }
   .hero-illo { margin: 26px -8px 0; }
 }
+
+/* paper-cut spot illustrations */
+.spot { display: block; width: 100%; max-width: 360px; height: auto; margin: 0 0 6px -8px; }
+.svc-side .spot { max-width: 230px; margin: 14px 0 0 -6px; }
+.nf-art { display: block; width: min(420px, 90%); height: auto; margin: 0 auto 18px; }
+@media (max-width: 1020px) {
+  .svc-side { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 220px)); column-gap: 12px; align-items: end; }
+  .svc-side h2 { grid-column: 1 / -1; }
+  .svc-side .spot { margin-top: 0; }
+}

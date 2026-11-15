@@ -9,7 +9,7 @@ import os
 
 BUILD = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BUILD)
-V = "9"  # cache-bust: bump on every CSS/JS change
+V = "10"  # cache-bust: bump on every CSS/JS change
 
 LANG = "zh"
 
@@ -49,6 +49,22 @@ PFX = ""
 def chevron(cls=""):
     """The firm's own W·Y mark (yellow W, orange Y), used as the site's recurring device."""
     return f'<img class="chev {cls}" src="{PFX}assets/img/mark.png" width="400" height="238" alt="" aria-hidden="true">'
+
+
+ALT = {
+    "tax-return": ("Paper-cut illustration: a Self Assessment form marked SA100, a calendar showing 31 January, a pen and the W·Y stamp", "剪紙插圖：一份 SA100 自我評估報稅表、顯示 1 月 31 日的月曆、一支筆及 W·Y 印章"),
+    "company": ("Paper-cut illustration: a small shopfront with a striped awning, a sign reading & Co Ltd, an OPEN sign and a certificate with a seal", "剪紙插圖：掛著「& Co Ltd」招牌和條紋簷篷的小店、OPEN 牌，以及一張蓋有封印的證書"),
+    "payroll": ("Paper-cut illustration: a payslip coming out of an envelope, a pay-day calendar showing the 25th and a stack of coins", "剪紙插圖：從信封抽出的糧單、顯示 25 號出糧日的月曆及一疊硬幣"),
+    "landlord": ("Paper-cut illustration: a red-brick terraced house with a TO LET board, a key on a tag and a paper plane flying away", "剪紙插圖：掛著 TO LET 牌的紅磚排屋、一條掛著名牌的鎖匙，以及飛走的紙飛機"),
+    "lost": ("Paper-cut illustration: a paper plane looping off course and a torn boarding pass reading MAN and 404", "剪紙插圖：繞圈迷路的紙飛機，以及撕開成「MAN」和「404」兩半的登機證"),
+}
+
+
+def spot(name, cls="spot"):
+    """One of the paper-cut spot illustrations (4:3 WebP, 480 and 800 wide)."""
+    en, zh = ALT[name]
+    return (f'<img class="{cls}" src="{PFX}assets/img/{name}-480.webp" srcset="{PFX}assets/img/{name}-480.webp 480w, {PFX}assets/img/{name}-800.webp 800w" '
+            f'sizes="(min-width: 761px) 340px, 90vw" width="480" height="360" loading="lazy" alt="{L(en, zh)}">')
 
 
 def head(prefix, slug, title, desc):
@@ -320,7 +336,8 @@ def home(prefix):
     groups = ""
     for gid, gname, items in SERVICES_():
         lis = "".join(f'<li><a href="{prefix}services.html#{sid}">{t}</a></li>' for sid, t, _ in items)
-        groups += f'<div class="svc-col"><h3>{gname}</h3><ul>{lis}</ul></div>'
+        art = {"personal": "tax-return", "business": "company", "property": "landlord"}[gid]
+        groups += f'<div class="svc-col">{spot(art)}<h3>{gname}</h3><ul>{lis}</ul></div>'
     inds = "".join(f"<li>{i}</li>" for i in INDUSTRIES_())
     q0 = QUOTES[0]
     quotes = f'<figure class="q q-main"><blockquote lang="{L("en", "zh-Hant")}">{L(q0[0], q0[1])}</blockquote><figcaption>{q0[2]}</figcaption></figure>'
@@ -399,7 +416,8 @@ def services(prefix):
         cards = "".join(
             f'<article class="svc-item" id="{sid}"><h3>{t}</h3><p>{d}</p></article>' for sid, t, d in items
         )
-        out += f'<section class="svc-group" aria-labelledby="g-{gid}"><h2 id="g-{gid}">{gname}</h2><div class="svc-items">{cards}</div></section>'
+        arts = {"personal": ["tax-return"], "business": ["company", "payroll"], "property": ["landlord"]}[gid]
+        out += f'<section class="svc-group" aria-labelledby="g-{gid}"><div class="svc-side"><h2 id="g-{gid}">{gname}</h2>{"".join(spot(a) for a in arts)}</div><div class="svc-items">{cards}</div></section>'
     body = f'''
 <section class="page-head">
   {chevron("hero-chev")}
@@ -425,10 +443,12 @@ def stamp(prefix):
     std = [("£0 – £125,000", "0%"), ("£125,001 – £250,000", "2%"), ("£250,001 – £925,000", "5%"), ("£925,001 – £1.5m", "10%"), (L("Over £1.5m", "£1.5m 以上"), "12%")]
     ftb = [("£0 – £300,000", "0%"), ("£300,001 – £500,000", "5%"), (L("Price over £500,000", "樓價超過 £500,000"), L("No relief: standard rates", "不設寬減，按一般稅率"))]
     body = f'''
-<section class="hero hero-sub" aria-labelledby="hero-h">
-  {chevron("hero-chev")}
+<section class="hero hero-sub hero-home" aria-labelledby="hero-h">
   <div class="wrap hero-in">
     <h1 id="hero-h">{L('Stamp Duty for people moving from Hong Kong', '由香港來英買樓的印花稅')}</h1>
+    <figure class="hero-illo">
+      <img src="{prefix}assets/img/stamp-duty-1000.webp" srcset="{prefix}assets/img/stamp-duty-640.webp 640w, {prefix}assets/img/stamp-duty-1000.webp 1000w, {prefix}assets/img/stamp-duty-1600.webp 1600w" sizes="(min-width: 1021px) 560px, 100vw" width="1000" height="540" alt="{L('Paper-cut illustration: a Stamp Duty (SDLT) receipt, a large key with a W·Y fob and the front door of a red-brick house, number 24', '剪紙插圖：一張印花稅（SDLT）收據、一條掛著 W·Y 匙扣的大鎖匙，以及 24 號紅磚屋的大門')}">
+    </figure>
     {sdlt_tool(full=True)}
   </div>
 </section>
@@ -524,7 +544,7 @@ def privacy(prefix):
 def notfound(prefix):
     body = f'''
 <section class="nf">
-  {chevron("nf-chev")}
+  {spot("lost", "nf-art")}
   <div class="wrap">
     <h1>找不到這一頁 <span lang="en">Page not found</span></h1>
     <p>{L('Try the Stamp Duty calculator, our services, or call us on', '可以試試印花稅計算、我們的服務，或致電')} <a href="tel:{TEL}">{PHONE}</a>.</p>
