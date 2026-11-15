@@ -46,4 +46,5 @@ python3 _build/fonts.py      # 改了中文字之後重新子集化字型
 - 客戶評語：全部取自現有網站，未經改動。
 - 私隱聲明為草擬，須黃葉審閱。
 - 照片：沒有使用任何圖庫相片，只用了黃葉自己的標誌。
+- 插圖：自行繪製的剪紙風格插圖（首頁「由香港到曼城」：唐樓、HKG→MAN 登機證、Ancoats 紡織廠及 Rochdale 運河）。原檔 `assets/illo/hk-to-manchester.svg` 由 `_build/illo/hk_to_manchester.py` 產生；網站使用匯出的 WebP（640／1000／1600 寬），避免手機運算 SVG 濾鏡。
 - 地圖：MapLibre GL JS（BSD）＋ OpenFreeMap；步行時間來自 routing.openstreetmap.de 的路線。

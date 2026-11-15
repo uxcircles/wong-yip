@@ -9,7 +9,7 @@ import os
 
 BUILD = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BUILD)
-V = "7"  # cache-bust: bump on every CSS/JS change
+V = "9"  # cache-bust: bump on every CSS/JS change
 
 LANG = "zh"
 
@@ -326,10 +326,12 @@ def home(prefix):
     quotes = f'<figure class="q q-main"><blockquote lang="{L("en", "zh-Hant")}">{L(q0[0], q0[1])}</blockquote><figcaption>{q0[2]}</figcaption></figure>'
     quotes += "".join(f'<figure class="q"><blockquote lang="en">{a}</blockquote><figcaption>{c}</figcaption></figure>' for a, _, c in QUOTES[1:])
     body = f'''
-<section class="hero" aria-labelledby="hero-h">
-  {chevron("hero-chev")}
+<section class="hero hero-home" aria-labelledby="hero-h">
   <div class="wrap hero-in">
     <h1 id="hero-h">{L('Know your stamp duty before you make an offer', '買樓之前，先計清楚印花稅')}</h1>
+    <figure class="hero-illo">
+      <img src="{prefix}assets/img/hk-to-manchester-1000.webp" srcset="{prefix}assets/img/hk-to-manchester-640.webp 640w, {prefix}assets/img/hk-to-manchester-1000.webp 1000w, {prefix}assets/img/hk-to-manchester-1600.webp 1600w" sizes="(min-width: 1021px) 560px, 100vw" width="1000" height="540" alt="{L('Paper-cut illustration: a Hong Kong tenement block with laundry poles and a 黃葉 sign, a boarding pass from HKG to MAN, and a red-brick Ancoats cotton mill beside the Rochdale Canal with a narrowboat.', '剪紙插圖：掛著晾衫竹和「黃葉」招牌的香港唐樓、一張由香港飛往曼城的登機證，以及 Rochdale 運河旁的 Ancoats 紅磚紡織廠和窄船。')}" fetchpriority="low">
+    </figure>
     {sdlt_tool()}
     <p class="hero-foot">{L('Wong &amp; Yip Accountants, Manchester. ACCA and HKICPA accountants who speak English, Cantonese and Mandarin.', '曼城黃葉會計師樓：ACCA 及 HKICPA 會計師，以英語、廣東話及普通話服務。')} <a href="{prefix}stamp-duty.html">{L('How it is worked out', '計算方法及退稅')}</a></p>
   </div>

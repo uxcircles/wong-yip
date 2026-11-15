@@ -308,3 +308,15 @@ details p { margin-top: 0; }
   .seg small { margin: 0; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+
+/* home hero: headline beside the paper-cut illustration, calculator below */
+.hero-home .hero-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 560px); grid-template-areas: "h illo" "tool tool" "foot foot"; column-gap: 32px; align-items: center; }
+.hero-home h1 { grid-area: h; }
+.hero-home .tool { grid-area: tool; }
+.hero-home .hero-foot { grid-area: foot; }
+.hero-illo { grid-area: illo; margin: -8px 0 -6px; }
+.hero-illo img { display: block; width: 100%; height: auto; }
+@media (max-width: 1020px) {
+  .hero-home .hero-in { grid-template-columns: minmax(0, 1fr); grid-template-areas: "h" "tool" "foot" "illo"; }
+  .hero-illo { margin: 26px -8px 0; }
+}
