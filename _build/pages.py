@@ -9,7 +9,7 @@ import os
 
 BUILD = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BUILD)
-V = "15"  # cache-bust: bump on every CSS/JS change
+V = "17"  # cache-bust: bump on every CSS/JS change
 
 LANG = "zh"
 
@@ -193,9 +193,9 @@ def sdlt_tool(full=False):
     </label>
     <fieldset class="seg">
       <legend class="lbl">{L('After buying, you will own', '買入後，你名下')}</legend>
-      <label><input type="radio" name="type" value="ftb"><span>{L('My first home ever', '首次置業<small>從未在任何地方擁有物業</small>')}</span></label>
-      <label><input type="radio" name="type" value="home" checked><span>{L('Only this home', '只有這一個物業<small>例如已賣出香港的樓</small>')}</span></label>
-      <label><input type="radio" name="type" value="add"><span>{L('More than one home', '多於一個物業<small>例如保留香港的樓</small>')}</span></label>
+      <label><input type="radio" name="type" value="ftb"><span><span class="seg-l">{L('My first home ever', '首次置業<small>從未在任何地方擁有物業</small>')}</span></span></label>
+      <label><input type="radio" name="type" value="home" checked><span><span class="seg-l">{L('Only this home', '只有這一個物業<small>例如已賣出香港的樓</small>')}</span></span></label>
+      <label><input type="radio" name="type" value="add"><span><span class="seg-l">{L('More than one home', '多於一個物業<small>例如保留香港的樓</small>')}</span></span></label>
     </fieldset>
     <label class="check"><input type="checkbox" name="nonres"><span>{L('I have spent fewer than 183 days in the UK in the 12 months before buying (non-UK resident, +2%)', '購買前 12 個月內在英國少於 183 日（非英國居民，+2%）')}</span></label>
   </div>

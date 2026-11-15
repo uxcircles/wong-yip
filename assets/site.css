@@ -101,9 +101,9 @@ html[lang^="zh"] .lbl { letter-spacing: .14em; font-size: .9rem; }
 .seg { border: 0; padding: 0; margin: 0; min-width: 0; }
 .seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .seg legend { grid-column: 1 / -1; padding: 0; float: left; width: 100%; }
-.seg label { position: relative; }
+.seg label { position: relative; display: flex; }
 .seg input { position: absolute; opacity: 0; inset: 0; }
-.seg span { display: flex; flex-direction: column; justify-content: center; height: 100%; min-height: 56px; padding: 10px 12px; border-radius: 10px; border: 2px solid #6d4b8f; color: #fff; font-weight: 700; line-height: 1.25; cursor: pointer; font-size: .98rem; }
+.seg label > span { flex: 1; display: grid; align-content: center; justify-content: start; min-height: 56px; padding: 10px 12px; border-radius: 10px; border: 2px solid #6d4b8f; color: #fff; font-weight: 700; line-height: 1.25; cursor: pointer; font-size: .98rem; }
 .seg small { display: block; font-weight: 400; font-size: .78rem; color: #d6c8e3; margin-top: 3px; }
 .seg input:checked + span { background: var(--yellow); border-color: var(--yellow); color: var(--purple); }
 .seg input:checked + span small { color: var(--purple); }
@@ -292,7 +292,7 @@ details p { margin-top: 0; }
   .tool-in { gap: 14px; padding: 16px; }
   .lbl { margin-bottom: 6px; }
   .seg { gap: 6px; }
-  .seg span { padding: 8px; min-height: 52px; font-size: .9rem; }
+  .seg label > span { padding: 8px; min-height: 52px; font-size: .9rem; }
   .seg small { font-size: .72rem; }
   .check { font-size: .88rem; }
   .receipt { margin: 0 8px 8px; padding: 14px; }
@@ -309,8 +309,8 @@ details p { margin-top: 0; }
   .date-stack li { border-right: 0; margin-right: 0; border-top: 1px solid var(--line); padding-right: 0; }
   .facts div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .seg { grid-template-columns: minmax(0, 1fr); }
-  .seg span { min-height: 44px; flex-direction: row; align-items: baseline; align-content: center; gap: 2px 6px; flex-wrap: wrap; }
-  .seg small { margin: 0; }
+  .seg label > span { min-height: 44px; justify-content: center; text-align: center; }
+  .seg small { display: inline; margin: 0 0 0 6px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
 
@@ -335,3 +335,4 @@ details p { margin-top: 0; }
   .svc-side h2 { grid-column: 1 / -1; }
   .svc-side .spot { margin-top: 0; }
 }
+html[lang^="zh"] .seg-l { position: relative; top: 1px; }
