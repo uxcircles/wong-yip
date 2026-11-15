@@ -306,7 +306,7 @@ details p { margin-top: 0; }
   .date-stack li { border-right: 0; margin-right: 0; border-top: 1px solid var(--line); padding-right: 0; }
   .facts div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .seg { grid-template-columns: minmax(0, 1fr); }
-  .seg span { min-height: 44px; flex-direction: row; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .seg span { min-height: 44px; flex-direction: row; align-items: baseline; align-content: center; gap: 2px 6px; flex-wrap: wrap; }
   .seg small { margin: 0; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }

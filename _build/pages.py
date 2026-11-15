@@ -9,7 +9,7 @@ import os
 
 BUILD = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BUILD)
-V = "12"  # cache-bust: bump on every CSS/JS change
+V = "13"  # cache-bust: bump on every CSS/JS change
 
 LANG = "zh"
 
