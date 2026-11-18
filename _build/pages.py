@@ -186,7 +186,7 @@ def footer(prefix, slug):
       <p><a href="{PG}services.html">{L('Services', '服務')}</a> · <a href="{PG}stamp-duty.html">{L('Stamp Duty', '印花稅')}</a> · <a href="{PG}about.html">{L('About', '關於我們')}</a></p>
       <p><a href="{PG}privacy.html">{L('Privacy and accessibility', '私隱及無障礙')}</a> · <a href="{sw_href}" lang="{L('zh-Hant', 'en')}">{L('中文', 'English')}</a></p>
       <p class="foot-small">{L('Tools on this site give estimates, not tax advice. Rates for England and Northern Ireland, checked against GOV.UK in November 2026.', '本網站的計算工具只提供估算，並非稅務意見。稅率適用於英格蘭及北愛爾蘭，已於 2026 年 11 月按 GOV.UK 核對。')}</p>
-      <p class="foot-small"><span class="concept-note">{L("Unofficial redesign concept by ", "非官方概念設計： ")}<a href="{UXC}" target="_blank" rel="noopener">UX CIRCLES</a></span></p>
+      <p class="foot-small"><span class="concept-note">{L("Unofficial redesign concept by ", "非官方概念設計：")}<a href="{UXC}" target="_blank" rel="noopener">UX CIRCLES</a></span></p>
     </div>
   </div>
 </footer>
